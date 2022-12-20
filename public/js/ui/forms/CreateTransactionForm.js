@@ -9,9 +9,9 @@ class CreateTransactionForm extends AsyncForm {
    * */
   constructor(element) {
     if (!element) {
-      throw new Error(`Нe передан аргумент ${element}`);
+      throw new Error(`Нe передан аргумент ${element}`)
     }
-    
+
     super(element)
     this.renderAccountsList()
   }
@@ -23,13 +23,13 @@ class CreateTransactionForm extends AsyncForm {
   renderAccountsList() {
     Account.list({}, (err, response) => {
       if (err === null && response.success) {
-        const select = this.element.querySelector('.accounts-select');
-        const arr = Array.from(response.data);
-        let option = '';
+        const select = this.element.querySelector('.accounts-select')
+        const arr = Array.from(response.data)
+        let option = ''
         arr.forEach((item) => {
-          option += `<option value="${item.id}">${item.name}</option>`;
+          option += `<option value="${item.id}">${item.name}</option>`
         })
-        select.innerHTML = option;
+        select.innerHTML = option
       }
     })
   }
@@ -40,13 +40,18 @@ class CreateTransactionForm extends AsyncForm {
    * вызывает App.update(), сбрасывает форму и закрывает окно,
    * в котором находится форма
    * */
+
   onSubmit(data) {
     Transaction.create(data, (err, response) => {
-      if (err === null && response.success) {
-        this.element.reset();
-        App.getModal('newIncome').close();
-        App.update();
+      if (response && response.success) {
+        this.element.reset()
+        if (this.element.id == 'new-income-form') {
+          App.getModal('newIncome').close()
+        } else {
+          App.getModal('newExpense').close()
+        }
       }
+      App.update()
     })
   }
 }

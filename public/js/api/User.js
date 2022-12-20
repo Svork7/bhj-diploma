@@ -18,7 +18,7 @@ class User {
    * пользователе из локального хранилища.
    * */
   static unsetCurrent() {
-    localStorage.removeItem('user');
+    localStorage.removeItem('user')
   }
 
   /**
@@ -26,11 +26,7 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    try {
-      return JSON.parse(localStorage.getItem('user'));
-    } catch (e) {
-      console.log(e);
-    }
+    return JSON.parse(localStorage.getItem('user'))
   }
 
   /**
@@ -41,7 +37,7 @@ class User {
     createRequest({
       url: this.URL + '/current',
       method: 'GET',
-      callback
+      callback,
     })
   }
 
@@ -71,7 +67,7 @@ class User {
       url: this.URL + '/register',
       data,
       method: 'POST',
-      callback
+      callback,
     })
   }
 
@@ -83,8 +79,7 @@ class User {
     createRequest({
       url: this.URL + '/logout',
       method: 'POST',
-      callback
+      callback,
     })
   }
 }
-

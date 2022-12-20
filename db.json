@@ -53,6 +53,24 @@
       "email": "svork@ya.ru",
       "password": "12341234",
       "id": "rheur5yslbam7puw"
+    },
+    {
+      "name": "Евгений",
+      "email": "Svork@ya.ru",
+      "password": "12341234",
+      "id": "rheur3bglbgb0inh"
+    },
+    {
+      "name": "sdfsdf",
+      "email": "svork7@gmail.com",
+      "password": "12341234",
+      "id": "rheurgd8lbm12nrg"
+    },
+    {
+      "name": "1111",
+      "email": "Svork@ya1.ru",
+      "password": "12341234",
+      "id": "rheurbz0lbw4hr83"
     }
   ],
   "accounts": [
@@ -75,6 +93,16 @@
       "name": "Кошелек",
       "user_id": "hd48zol6rv959m",
       "id": "hd4f70l6xuyi1z"
+    },
+    {
+      "name": "vfgnhvn",
+      "user_id": "rheur5yslbam7puw",
+      "id": "rheur3qwlbama180"
+    },
+    {
+      "name": "1111",
+      "user_id": "rheur3bglbgb0inh",
+      "id": "rheurax0lbgb2zh9"
     }
   ],
   "transactions": [
@@ -212,6 +240,168 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "rheur73slbgb3k1i",
+      "type": "expense",
+      "name": "sdfsdf",
+      "sum": 5000,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:29:12.245Z"
+    },
+    {
+      "id": "rheur3bglbgb4z4j",
+      "type": "expense",
+      "name": "sdfsdf",
+      "sum": 5000,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:30:18.450Z"
+    },
+    {
+      "id": "rheur93olbgbikx4",
+      "type": "expense",
+      "name": "234234",
+      "sum": 234234,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:40:53.223Z"
+    },
+    {
+      "id": "rheur360lbgbt3ji",
+      "type": "expense",
+      "name": "sdfsf",
+      "sum": -5999,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:49:03.917Z"
+    },
+    {
+      "id": "rheur5f0lbgbtd7g",
+      "type": "income",
+      "name": "sdfsdf",
+      "sum": 5000,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:49:16.443Z"
+    },
+    {
+      "id": "rheurb1clbgbu3by",
+      "type": "expense",
+      "name": "s",
+      "sum": 5000,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:49:50.301Z"
+    },
+    {
+      "id": "rheurdwwlbgbusqi",
+      "type": "expense",
+      "name": "3453",
+      "sum": 345,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:50:23.225Z"
+    },
+    {
+      "id": "rheur6nwlbgbwkaa",
+      "type": "expense",
+      "name": "34535",
+      "sum": 34535,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:51:45.585Z"
+    },
+    {
+      "id": "rheur8zwlbgbwsa4",
+      "type": "income",
+      "name": "sdfsdf",
+      "sum": 345345,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:51:55.947Z"
+    },
+    {
+      "id": "rheurc74lbgbzljv",
+      "type": "income",
+      "name": "sdfsdf",
+      "sum": 5000,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:54:07.194Z"
+    },
+    {
+      "id": "rheuraoolbgbzq6i",
+      "type": "expense",
+      "name": "sdfsdf",
+      "sum": 5000,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:54:13.193Z"
+    },
+    {
+      "id": "rheure7olbgc07h6",
+      "type": "expense",
+      "name": "sdfsdf",
+      "sum": 333,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:54:35.609Z"
+    },
+    {
+      "id": "rheuremslbgc1hu1",
+      "type": "expense",
+      "name": "sdfsdf",
+      "sum": 5000,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:55:35.688Z"
+    },
+    {
+      "id": "rheur7p8lbgc21iu",
+      "type": "income",
+      "name": "3",
+      "sum": 333,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:56:01.205Z"
+    },
+    {
+      "id": "rheurcbglbgc27w4",
+      "type": "income",
+      "name": "3333",
+      "sum": 5000,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:56:09.459Z"
+    },
+    {
+      "id": "rheur70clbgc2ql5",
+      "type": "income",
+      "name": "12222",
+      "sum": 234234,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-09T09:56:33.688Z"
+    },
+    {
+      "id": "rheurbpglbw3ejo5",
+      "type": "income",
+      "name": "sdfsdf",
+      "sum": 5000,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-20T10:38:06.868Z"
+    },
+    {
+      "id": "rheur5jolbw3eppf",
+      "type": "expense",
+      "name": "sdfsdf",
+      "sum": 333,
+      "account_id": "rheurax0lbgb2zh9",
+      "user_id": "rheur3bglbgb0inh",
+      "created_at": "2022-12-20T10:38:14.690Z"
     }
   ]
 }

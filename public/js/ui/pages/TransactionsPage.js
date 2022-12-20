@@ -10,12 +10,12 @@ class TransactionsPage {
    * Сохраняет переданный элемент и регистрирует события
    * через registerEvents()
    * */
-  constructor( element ) {
+  constructor(element) {
     if (!element) {
-      throw new Error(`Не был передан аргумент ${element}`);
+      throw new Error(`Не был передан аргумент ${element}`)
     }
 
-    this.element = element;
+    this.element = element
     this.registerEvents()
   }
 
@@ -23,7 +23,7 @@ class TransactionsPage {
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-    this.render(this.lastOptions);
+    this.render(this.lastOptions)
   }
 
   /**
@@ -34,13 +34,15 @@ class TransactionsPage {
    * */
   registerEvents() {
     this.element.onclick = (e) => {
-      e.preventDefault();
+      e.preventDefault()
 
       if (e.target.closest('.remove-account')) {
-        this.removeAccount();
+        this.removeAccount()
       }
       if (e.target.closest('.transaction__remove')) {
-        this.removeTransaction(e.target.closest('.transaction__remove').dataset.id);
+        this.removeTransaction(
+          e.target.closest('.transaction__remove').dataset.id
+        )
       }
     }
   }
@@ -56,13 +58,13 @@ class TransactionsPage {
    * */
   removeAccount() {
     if (this.lastOptions) {
-      const id = this.lastOptions.account_id;
+      const id = this.lastOptions.account_id
       if (confirm('Вы действительно хотите удалить счет?')) {
         Account.remove({ id }, (err, response) => {
           if (err === null && response.success) {
-            this.clear();
-            App.updateWidgets();
-            App.updateForms();
+            this.clear()
+            App.updateWidgets()
+            App.updateForms()
           }
         })
       }
@@ -75,13 +77,12 @@ class TransactionsPage {
    * По удалению транзакции вызовите метод App.update(),
    * либо обновляйте текущую страницу (метод update) и виджет со счетами
    * */
-  removeTransaction( id ) {
-    if (this.lastOptions) {
-      if (confirm('Вы действительно хотите удалить эту транзакцию?')) {
+  removeTransaction(id) {
+    if (this.lastOptions && confirm('Вы действительно хотите удалить эту транзакцию?')) {
         Transaction.remove({ id }, (err, response) => {
           if (err === null && response.success) {
-            App.getWidget("accounts").update();
-            this.update();
+            App.getWidget('accounts').update()
+            this.update()
           }
         })
       }
@@ -94,20 +95,20 @@ class TransactionsPage {
    * Получает список Transaction.list и полученные данные передаёт
    * в TransactionsPage.renderTransactions()
    * */
-  render(options){
-    this.lastOptions = options;
+  render(options) {
+    this.lastOptions = options
     if (!options) {
       return
     }
     Account.get(options.account_id, (err, response) => {
       if (err === null && response.success) {
-        this.renderTitle(response.data.name);
+        this.renderTitle(response.data.name)
       }
     })
     Transaction.list(options, (err, response) => {
       if (err === null && response.success) {
-        console.log(response);
-        this.renderTransactions(response.data);
+        console.log(response)
+        this.renderTransactions(response.data)
       }
     })
   }
@@ -118,28 +119,30 @@ class TransactionsPage {
    * Устанавливает заголовок: «Название счёта»
    * */
   clear() {
-    this.renderTransactions([]);
-    this.renderTitle('Название счета');
-    this.lastOptions = null;
+    this.renderTransactions([])
+    this.renderTitle('Название счета')
+    this.lastOptions = null
   }
 
   /**
    * Устанавливает заголовок в элемент .content-title
    * */
-  renderTitle(name){
-    this.element.querySelector('.content-title').textContent = name;
+  renderTitle(name) {
+    this.element.querySelector('.content-title').textContent = name
   }
 
   /**
    * Форматирует дату в формате 2019-03-10 03:20:41 (строка)
    * в формат «10 марта 2019 г. в 03:20»
    * */
-  formatDate(date){
-    const fullDate = new Date(date);
-    const options = { dateStyle: "long", timeStyle: "short" };
-    const formatedDate = new Intl.DateTimeFormat("ru-RU", options).format(fullDate);
+  formatDate(date) {
+    const fullDate = new Date(date)
+    const options = { dateStyle: 'long', timeStyle: 'short' }
+    const formatedDate = new Intl.DateTimeFormat('ru-RU', options).format(
+      fullDate
+    )
 
-    return formatedDate.split(",").join(" в ");
+    return formatedDate.split(',').join(' в ')
   }
 
   /**
@@ -156,7 +159,9 @@ class TransactionsPage {
       <div class="transaction__info">
           <h4 class="transaction__title">${item.name}</h4>
           <!-- дата -->
-          <div class="transaction__date">${this.formatDate(item.created_at)}</div>
+          <div class="transaction__date">${this.formatDate(
+            item.created_at
+          )}</div>
       </div>
     </div>
     <div class="col-md-3">
@@ -172,8 +177,7 @@ class TransactionsPage {
         </button>
     </div>
 </div>
-    `;
-    
+    `
   }
 
   /**
@@ -181,13 +185,13 @@ class TransactionsPage {
    * используя getTransactionHTML
    * */
   renderTransactions(data) {
-    this.element.querySelector(".content").innerHTML = "";
+    this.element.querySelector('.content').innerHTML = ''
     if (data) {
       data.forEach((item) => {
         this.element
-          .querySelector(".content")
-          .insertAdjacentHTML("beforeend", this.getTransactionHTML(item));
-      });
+          .querySelector('.content')
+          .insertAdjacentHTML('beforeend', this.getTransactionHTML(item))
+      })
     }
   }
 }

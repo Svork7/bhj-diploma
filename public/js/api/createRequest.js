@@ -3,43 +3,38 @@
  * на сервер.
  * */
 const createRequest = (options = {}) => {
-  const { url, data, method, callback } = options;
-  const xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
-  xhr.withCredentials = true;
-  const formData = new FormData();
-  
+  const { url, data, method, callback } = options
+  const xhr = new XMLHttpRequest()
+  xhr.responseType = 'json'
+  const formData = new FormData()
+
   try {
-    xhr.open(method, setFullURL(data, url));
+    xhr.open(method, setFullURL(data, url))
   } catch (e) {
-    console.log(e);
+    console.log(e)
   }
 
   if (method === 'GET') {
     xhr.send()
   } else {
     for (let item in data) {
-      formData.append(item, data[item]);
+      formData.append(item, data[item])
     }
-    xhr.send(formData);
+    xhr.send(formData)
   }
 
   xhr.onload = function () {
-    callback(null, xhr.response);
-  }  
+    callback(null, xhr.response)
+  }
   xhr.onerror = function () {
-    callback(xhr.statusText, null); 
+    callback(xhr.statusText, null)
   }
-};
-
-function setFullURL(data = {}, url) {
-  let fullURL = url + '?';
-  for (let key in data) {
-    fullURL += `${key}=${data[key]}&`;
-  }
-  return fullURL.substring(0, fullURL.length - 1);
 }
 
-
-
-
+function setFullURL(data = {}, url) {
+  let fullURL = url + '?'
+  for (let key in data) {
+    fullURL += `${key}=${data[key]}&`
+  }
+  return fullURL.substring(0, fullURL.length - 1)
+}

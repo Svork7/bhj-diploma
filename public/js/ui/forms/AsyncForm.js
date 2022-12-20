@@ -14,10 +14,10 @@ class AsyncForm {
    * */
   constructor(element) {
     if (!element) {
-      throw new Error(`Не передан агрумент ${element}`);
+      throw new Error(`Не передан агрумент ${element}`)
     }
-    this.element = element;
-    this.registerEvents();
+    this.element = element
+    this.registerEvents()
   }
 
   /**
@@ -25,10 +25,9 @@ class AsyncForm {
    * вызывает метод submit()
    * */
   registerEvents() {
-    
     this.element.addEventListener('submit', (e) => {
-      e.preventDefault();
-      this.submit();
+      e.preventDefault()
+      this.submit()
     })
   }
 
@@ -40,25 +39,17 @@ class AsyncForm {
    * }
    * */
   getData() {
-    const data = {};
-    const formData = new FormData(this.element).entries();
-    for (let item of formData) {
-      data[item[0]] = item[1];
-      
-    }
-    return data;
+    const formData = new FormData(this.element)
+    return Object.fromEntries(formData.entries())
   }
 
-  onSubmit(options) {
-
-  }
+  onSubmit(options) {}
 
   /**
    * Вызывает метод onSubmit и передаёт туда
    * данные, полученные из метода getData()
    * */
   submit() {
-    this.onSubmit(this.getData());
+    this.onSubmit(this.getData())
   }
 }
-
