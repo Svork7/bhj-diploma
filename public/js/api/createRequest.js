@@ -9,7 +9,7 @@ const createRequest = (options = {}) => {
   const formData = new FormData()
 
   try {
-    xhr.open(method, setFullURL(data, url))
+    xhr.open(method, method === 'GET' ? setFullURL(data, url) : url)
   } catch (e) {
     console.log(e)
   }

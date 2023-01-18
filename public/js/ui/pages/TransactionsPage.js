@@ -78,14 +78,16 @@ class TransactionsPage {
    * либо обновляйте текущую страницу (метод update) и виджет со счетами
    * */
   removeTransaction(id) {
-    if (this.lastOptions && confirm('Вы действительно хотите удалить эту транзакцию?')) {
-        Transaction.remove({ id }, (err, response) => {
-          if (err === null && response.success) {
-            App.getWidget('accounts').update()
-            this.update()
-          }
-        })
-      }
+    if (
+      this.lastOptions &&
+      confirm('Вы действительно хотите удалить эту транзакцию?')
+    ) {
+      Transaction.remove({ id }, (err, response) => {
+        if (err === null && response.success) {
+          App.getWidget('accounts').update()
+          this.update()
+        }
+      })
     }
   }
 
